@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap'); /* Graffiti-like font for the Californian ghetto feel */
+
+body {
+    font-family: "Sedgwick Ave Display", "Courier New", Courier, monospace; /* Added a graffiti-like font */
+    background-image: linear-gradient(315deg, #FFDAB9 0%, #FFB6C1 74%); /* Gradient background for a more vibrant feel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+#aiEntity {
+    width: 150px;
+    height: 150px;
+    background-color: #000;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.4); /* Shadow for a popping effect */
+    transition: transform 0.3s ease; /* Transition for hover effect */
+}
+
+#aiEntity:hover {
+    transform: scale(1.1); /* Hover effect to make AI entity feel alive */
+}
+
+#aiEntity::before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: kittLights 1s infinite;
+}
+
+#chatLog {
+    width: 400px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent for a softer look */
+    color: #00FF00;
+    padding: 10px;
+    overflow: auto;
+    margin-bottom: 30px;
+    border: 2px dashed #FF4500; /* Changed to a dashed border for a more dynamic feel */
+}
+
+#objective {
+    width: 400px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7); /* Similar transparency here */
+    color: #00FF00;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 2px dashed #FF4500;
+}
+
+#codeForm, #getCodeBtn {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #FF6347; /* More vibrant button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #FF4500; /* Brighter hover color */
+    transform: translateY(-3px); /* Slight upward motion on hover */
+}
+
+@keyframes kittLights {
+    0%, 100% {
+        left: 15%;
+    }
+    50% {
+        left: 85%;
+    }
+}

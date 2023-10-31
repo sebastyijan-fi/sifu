@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <title>Chat with AI</title>
+  </head>
+  <body>
+    <div id="aiEntity" onmousedown="startSpeaking()" onmouseup="stopSpeaking()"></div>
+    <textarea id="chatLog" readonly>
+User: Hello AI!
+AI: Hello, user! How can I assist you today?
+    </textarea>
+    <textarea id="objective" readonly>Objective: Interact with the AI.</textarea>
+    <div id="codeForm">
+      <label for="chatCode">Enter Chat Code:</label>
+      <input type="text" id="chatCode" placeholder="Enter your code" />
+      <button onclick="startChat()">Start Chat</button>
+    </div>
+    <button id="getCodeBtn">Get Code</button>
+  </body>
+</html>
