@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
-    <title>Chat with AI</title>
-  </head>
-  <body>
-    <div id="aiEntity" onmousedown="startSpeaking()" onmouseup="stopSpeaking()"></div>
-    <textarea id="chatLog" readonly>
-User: Hello AI!
-AI: Hello, user! How can I assist you today?
-    </textarea>
-    <textarea id="objective" readonly>Objective: Interact with the AI.</textarea>
-    <div id="codeForm">
-      <label for="chatCode">Enter Chat Code:</label>
-      <input type="text" id="chatCode" placeholder="Enter your code" />
-      <button onclick="startChat()">Start Chat</button>
-    </div>
-    <button id="getCodeBtn">Get Code</button>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIFU - AI Engagement Study</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <header id="main-header">
+        <h1 id="objective-text">Welcome to SIFU</h1>
+        <p>Join us in exploring the engagement with an AI-based voice assistant. Your insights will help shape the future of AI interaction.</p>
+        <button id="participate-button">Participate!</button>
+    </header>
+
+    <main>
+        <div id="interaction-counter" class="hidden">
+            <p>Interactions left: <span id="interaction-count">15/15</span></p>
+        </div>
+
+        <div id="avatar-container" class="hidden">
+            <!-- Avatar image will be loaded here -->
+        </div>
+
+        <div id="ai-response" class="hidden">
+            <!-- AI's response will be displayed here -->
+        </div>
+
+        <div id="user-interaction-area" class="hidden">
+            <input type="text" id="user-input" placeholder="Your answer">
+            <button id="submit-answer">Submit</button>
+        </div>
+
+        <!-- After interactions are completed, the questionnaire will be displayed -->
+        <div id="questionnaire" class="hidden">
+            <!-- Questionnaire form will go here -->
+        </div>
+    </main>
+</div>
+
+</body>
 </html>
