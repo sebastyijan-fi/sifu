@@ -1,123 +1,145 @@
 /* style.css - Defines styles for SIFU AI Engagement Study with a dark theme */
 
 /* General styles for the body and html to set the font and background */
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212; /* Dark background for dark mode */
-    color: #ffffff; /* White text for readability */
-    display: flex;
-    flex-direction: column;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Dark background for dark mode */
+  color: #ffffff; /* White text for readability */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Container for centering the content */
 .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 /* Header styles for title and introduction text */
 header {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 header h1 {
-    font-size: 2em;
-    color: #4fd1c5; /* Accent color for the main title */
+  font-size: 2em;
+  color: #4fd1c5; /* Accent color for the main title */
 }
 
 header p {
-    font-size: 1em;
-    color: #cfcfcf; /* Lighter text color for less emphasis */
+  font-size: 1em;
+  color: #cfcfcf; /* Lighter text color for less emphasis */
 }
 
 /* Style for buttons to make them stand out */
 button {
-    background-color: #333333; /* Darker background for buttons */
-    color: #ffffff; /* White text color */
-    border: 1px solid #4fd1c5; /* Accent border color */
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  background-color: #333333; /* Darker background for buttons */
+  color: #ffffff; /* White text color */
+  border: 1px solid #4fd1c5; /* Accent border color */
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 /* Hover effect for buttons */
 button:hover {
-    background-color: #4fd1c5; /* Lighter background on hover */
+  background-color: #4fd1c5; /* Lighter background on hover */
 }
 
 /* Hidden class for initially hiding elements until they need to be shown */
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* Styles for the avatar image */
 #avatar-container img {
-    max-width: 200px; /* Set a maximum width for avatars */
-    margin: 20px auto;
-    border-radius: 50%; /* Circular avatars */
-    border: 3px solid #4fd1c5;
-
+  max-width: 200px; /* Set a maximum width for avatars */
+  margin: 20px auto;
+  border-radius: 50%; /* Circular avatars */
+  border: 3px solid #4fd1c5;
 }
 
 /* Styles for the user input area */
 #user-input {
-    width: 100%; /* Full width of its container */
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #1e1e1e; /* Slightly lighter than the body for contrast */
-    border: 1px solid #4fd1c5; /* Accent border color */
-    color: #fff; /* White text color for readability */
+  width: 100%; /* Full width of its container */
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #1e1e1e; /* Slightly lighter than the body for contrast */
+  border: 1px solid #4fd1c5; /* Accent border color */
+  color: #fff; /* White text color for readability */
 }
 
 /* Styles for the submit answer button */
 #submit-answer {
-    padding: 10px 20px;
-    background-color: #2a2a2a; /* Darker background for less emphasis */
-    border: 1px solid #4fd1c5; /* Accent border color */
-    color: #fff; /* White text color */
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: #2a2a2a; /* Darker background for less emphasis */
+  border: 1px solid #4fd1c5; /* Accent border color */
+  color: #fff; /* White text color */
+  cursor: pointer;
 }
 
 /* Styles for the AI response area */
 #ai-response {
-    background-color: #1e1e1e; /* Slightly lighter than the body for contrast */
-    padding: 15px;
-    border-radius: 5px;
-    margin-top: 10px;
-    /* Initially hidden; will be shown when AI interaction starts */
+  background-color: #1e1e1e; /* Slightly lighter than the body for contrast */
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  /* Initially hidden; will be shown when AI interaction starts */
 }
 
 /* Styles for the interaction counter */
 #interaction-counter {
-    text-align: center;
-    margin-top: 10px;
-    /* Initially hidden; will be shown when the user participates */
+  text-align: center;
+  margin-top: 10px;
+  /* Initially hidden; will be shown when the user participates */
 }
 
 /* Styles for the questionnaire area */
 #questionnaire {
-    margin-top: 20px;
-    /* Initially hidden; will be shown after the interactions are completed */
+  margin-top: 20px;
+  /* Initially hidden; will be shown after the interactions are completed */
 }
 
 /* Accessibility improvements */
-button:focus, input:focus {
-    outline: 3px solid #4fd1c5; /* High contrast outline for focus */
+button:focus,
+input:focus {
+  outline: 3px solid #4fd1c5; /* High contrast outline for focus */
 }
 
 /* Prefers-reduced-motion media query for users who have requested reduced motion in their system settings */
 @media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.001ms !important;
-        transition-duration: 0.001ms !important;
-    }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.submit-button-q {
+  margin-top: 10px;
+}
+
+.thank-you-message {
+    background-color: #e7e2e2; /* A light grey background that stands out */
+    border: 0.5px solid #ccc; /* A subtle border */
+    padding: 5px; /* Some padding to give space inside the box */
+    text-align: center; /* Centers the text */
+    border-radius: 5px; /* Optional: rounds the corners of the border */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow to lift the box off the page */
+    font-size: 1.1em; /* Makes the font a little larger and more readable */
+    color: #333; /* Darker text for contrast and readability */
+    margin-top: 20px;
+}
+
+.thanks{
+    font-size: large;
+    color: rgb(0, 255, 0);
 }
