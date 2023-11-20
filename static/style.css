@@ -1,11 +1,10 @@
 /* style.css - Defines styles for SIFU AI Engagement Study with a dark theme */
 
 /* General styles for the body and html to set the font and background */
-body,
-html {
+body, html {
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #121212; /* Dark background for dark mode */
   color: #ffffff; /* White text for readability */
   display: flex;
@@ -14,13 +13,12 @@ html {
 
 /* Container for centering the content */
 .container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  justify-content: center;
+  align-items: center; /* Centering content */
 }
 
 /* Header styles for title and introduction text */
@@ -39,8 +37,8 @@ header p {
   color: #cfcfcf; /* Lighter text color for less emphasis */
 }
 
-/* Style for buttons to make them stand out */
-button {
+/* Style for the participate button to make it stand out */
+#participate-button {
   background-color: #333333; /* Darker background for buttons */
   color: #ffffff; /* White text color */
   border: 1px solid #4fd1c5; /* Accent border color */
@@ -50,9 +48,106 @@ button {
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-/* Hover effect for buttons */
-button:hover {
+/* Hover effect for the participate button */
+#participate-button:hover {
   background-color: #4fd1c5; /* Lighter background on hover */
+}
+
+/* Interaction counter styles */
+.interaction-counter {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Interaction area styles */
+/* Make sure the main interaction area is centered */
+.interaction-area {
+  align-items: center; /* Center the flex items */
+}
+
+/* Interaction area to align its children with space between them */
+#avatar-and-response-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%; /* Set combined width of avatar and response containers */
+}
+
+/* Style adjustments for avatar container */
+#avatar-container {
+  flex-basis: 40%;
+  max-width: 40%; /* Limit width to 40% of its parent container */
+
+}
+
+#avatar-container img {
+  max-width: 100%; /* Image should not exceed the width of its container */
+  height: auto; /* Keep the aspect ratio */
+  border-radius: 10px; /* Rounded corners for aesthetics */
+}
+
+
+/* Response container to match avatar container width */
+#ai-response-container {
+  width: 45%; /* Adjust the width as needed */
+
+}
+
+#ai-response {
+  font-size: large;
+  background-color: #1e1e1e; /* Slightly lighter than the body for contrast */
+  border: 1px solid #4fd1c5; /* Accent border color */
+  color: #ffffff; /* White text color for readability */
+  padding: 10px; /* Padding inside the textarea */
+  border-radius: 5px; /* Rounded corners for the textarea */
+  resize: none; /* Disable resizing of the textarea */
+  height: 384px; /* Fixed height for the textarea */
+  width: 100%; /* Ensure the textarea fills its container */
+  box-sizing: border-box; /* Include padding and border in the width and height */
+}
+
+/* Assignment container to be full width below avatar and response */
+.assignment-container {
+  width: 80%; /* Match width of avatar and response containers */
+  background-color: #262626;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px; /* Space after avatar and response containers */
+  color: #ffffff;
+}
+
+.user-interaction-area {
+  display: flex;
+  justify-content: space-between; /* Align children to each end */
+  align-items: center; /* Center children vertically */
+  width: 80%; /* Same as avatar and response container if they are 40% each */
+  margin-top: 20px; /* Space after the assignment container */
+}
+
+#user-input {
+  flex-grow: 1; /* Input to take up available space */
+  padding: 10px;
+  margin-right: 10px; /* Space between input and button */
+  background-color: #1e1e1e;
+  border: 1px solid #4fd1c5;
+  color: #fff;
+}
+
+/* Submit button to be a small clickable area next to input */
+#submit-answer {
+  padding: 10px;
+  background-color: #4fd1c5;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex; /* To center the background image */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 48px; /* Fixed width */
+  height: 48px; /* Fixed height */
+  background-image: url('/static/send-icon.png'); /* Replace with your send icon path */
+  background-size: 24px; /* Icon size */
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Hidden class for initially hiding elements until they need to be shown */
@@ -60,86 +155,29 @@ button:hover {
   display: none;
 }
 
-/* Styles for the avatar image */
-#avatar-container img {
-  max-width: 200px; /* Set a maximum width for avatars */
-  margin: 20px auto;
-  border-radius: 50%; /* Circular avatars */
-  border: 3px solid #4fd1c5;
+/* Utility class for showing elements */
+.visible {
+  display: block;
 }
-
-/* Styles for the user input area */
-#user-input {
-  width: 100%; /* Full width of its container */
-  padding: 10px;
-  margin: 10px 0;
-  background-color: #1e1e1e; /* Slightly lighter than the body for contrast */
-  border: 1px solid #4fd1c5; /* Accent border color */
-  color: #fff; /* White text color for readability */
-}
-
-/* Styles for the submit answer button */
-#submit-answer {
-  padding: 10px 20px;
-  background-color: #2a2a2a; /* Darker background for less emphasis */
-  border: 1px solid #4fd1c5; /* Accent border color */
-  color: #fff; /* White text color */
-  cursor: pointer;
-}
-
-/* Styles for the AI response area */
-#ai-response {
-  background-color: #1e1e1e; /* Slightly lighter than the body for contrast */
-  padding: 15px;
-  border-radius: 5px;
-  margin-top: 10px;
-  /* Initially hidden; will be shown when AI interaction starts */
-}
-
-/* Styles for the interaction counter */
-#interaction-counter {
-  text-align: center;
-  margin-top: 10px;
-  /* Initially hidden; will be shown when the user participates */
-}
-
-/* Styles for the questionnaire area */
-#questionnaire {
-  margin-top: 20px;
-  /* Initially hidden; will be shown after the interactions are completed */
-}
-
-/* Accessibility improvements */
-button:focus,
-input:focus {
-  outline: 3px solid #4fd1c5; /* High contrast outline for focus */
-}
-
-/* Prefers-reduced-motion media query for users who have requested reduced motion in their system settings */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
+/* Media query for responsive adjustments on smaller screens */
+@media (max-width: 768px) {
+  /* Stack avatar and response areas on top of each other */
+  #avatar-and-response-container {
+    flex-direction: column;
   }
-}
 
-.submit-button-q {
-  margin-top: 10px;
-}
+  #avatar-container, #ai-response-container {
+    max-width: 100%; /* Full width on smaller screens */
+    padding: 0; /* Remove padding on smaller screens */
+  }
 
-.thank-you-message {
-    background-color: #e7e2e2; /* A light grey background that stands out */
-    border: 0.5px solid #ccc; /* A subtle border */
-    padding: 5px; /* Some padding to give space inside the box */
-    text-align: center; /* Centers the text */
-    border-radius: 5px; /* Optional: rounds the corners of the border */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow to lift the box off the page */
-    font-size: 1.1em; /* Makes the font a little larger and more readable */
-    color: #333; /* Darker text for contrast and readability */
-    margin-top: 20px;
-}
+  /* Full-width user interaction area on smaller screens */
+  .user-interaction-area {
+    width: 100%;
+  }
 
-.thanks{
-    font-size: large;
-    color: rgb(0, 255, 0);
+  /* Full-width assignment container on smaller screens */
+  .assignment-container {
+    width: 100%;
+  }
 }

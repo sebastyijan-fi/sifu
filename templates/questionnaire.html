@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire - SIFU AI Engagement Study</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/quest.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Content of the questionnaire -->
+        <div id="questionnaire" class="questionnaire">
+            <p class="thanks">Now that you have interacted with the AI, we invite you to share your experience. </p>
+            <br>
+            <form id="aiQuestionnaire">
+                <!-- User Experience and Usability -->
+            <p>1 = Strongly Disagree and 5 = Strongly Agree.</p>
+                <div class="question">
+                    <p class="statement">The AI assistant understood my queries effectively.</p>
+                    <div class="scale">
+                        <!-- Radio buttons for the Likert scale -->
+                        <label class="radio-inline"><input type="radio" name="understanding" value="1" required>1</label>
+                        <label class="radio-inline"><input type="radio" name="understanding" value="2" required>2</label>
+                        <label class="radio-inline"><input type="radio" name="understanding" value="3" required>3</label>
+                        <label class="radio-inline"><input type="radio" name="understanding" value="4" required>4</label>
+                        <label class="radio-inline"><input type="radio" name="understanding" value="5" required>5</label>
+                    </div>
+                </div>
+
+                <!-- Perceived Intelligence -->
+                <div class="question">
+                    <p class="statement">The AI assistant provided information that was relevant.</p>
+                    <div class="scale">
+                         <!-- Radio buttons for the Likert scale -->
+                         <label class="radio-inline"><input type="radio" name="relevance" value="1" required>1</label>
+                         <label class="radio-inline"><input type="radio" name="relevance" value="2" required>2</label>
+                         <label class="radio-inline"><input type="radio" name="relevance" value="3" required>3</label>
+                         <label class="radio-inline"><input type="radio" name="relevance" value="4" required>4</label>
+                         <label class="radio-inline"><input type="radio" name="relevance" value="5" required>5</label>
+                    </div>
+                </div>
+
+                <!-- Emotional Connection -->
+                <div class="question">
+                    <p class="statement">The AI seemed to understand and care about my feelings during the interaction.</p>
+                    <div class="scale">
+                         <!-- Radio buttons for the Likert scale -->
+                         <label class="radio-inline"><input type="radio" name="emotional_connection" value="1" required>1</label>
+                         <label class="radio-inline"><input type="radio" name="emotional_connection" value="2" required>2</label>
+                         <label class="radio-inline"><input type="radio" name="emotional_connection" value="3" required>3</label>
+                         <label class="radio-inline"><input type="radio" name="emotional_connection" value="4" required>4</label>
+                         <label class="radio-inline"><input type="radio" name="emotional_connection" value="5" required>5</label>
+                    </div>
+                </div>
+
+                <!-- Future Interaction and Trust -->
+                <div class="question">
+                    <p class="statement">I trust the responses of the AI assistant to be reliable.</p>
+                    <div class="scale">
+                         <!-- Radio buttons for the Likert scale -->
+                         <label class="radio-inline"><input type="radio" name="trust" value="1" required>1</label>
+                         <label class="radio-inline"><input type="radio" name="trust" value="2" required>2</label>
+                         <label class="radio-inline"><input type="radio" name="trust" value="3" required>3</label>
+                         <label class="radio-inline"><input type="radio" name="trust" value="4" required>4</label>
+                         <label class="radio-inline"><input type="radio" name="trust" value="5" required>5</label>
+                    </div>
+                </div>
+
+                <!-- Overall Satisfaction -->
+                <div class="question">
+                    <p class="statement">I was satisfied with the AI assistant as a conversational partner.</p>
+                    <div class="scale">
+                         <!-- Radio buttons for the Likert scale -->
+                         <label class="radio-inline"><input type="radio" name="satisfaction" value="1" required>1</label>
+                         <label class="radio-inline"><input type="radio" name="satisfaction" value="2" required>2</label>
+                         <label class="radio-inline"><input type="radio" name="satisfaction" value="3" required>3</label>
+                         <label class="radio-inline"><input type="radio" name="satisfaction" value="4" required>4</label>
+                         <label class="radio-inline"><input type="radio" name="satisfaction" value="5" required>5</label>
+                    </div>
+                </div>
+
+                <!-- Task-Focused Interaction -->
+                <div class="question">
+                    <p class="statement">The AI supported me well in progressing towards the task's completion.</p>
+                    <div class="scale">
+                         <!-- Radio buttons for the Likert scale -->
+                         <label class="radio-inline"><input type="radio" name="task_support" value="1" required>1</label>
+                         <label class="radio-inline"><input type="radio" name="task_support" value="2" required>2</label>
+                         <label class="radio-inline"><input type="radio" name="task_support" value="3" required>3</label>
+                         <label class="radio-inline"><input type="radio" name="task_support" value="4" required>4</label>
+                         <label class="radio-inline"><input type="radio" name="task_support" value="5" required>5</label>
+                    </div>
+                </div>
+
+                <!-- User Experience Clarity -->
+                <div class="question">
+                    <p class="statement">The AI's responses to my queries were straightforward and easy to understand.</p>
+                    <div class="scale">
+                        <!-- Radio buttons for the Likert scale -->
+                        <label class="radio-inline"><input type="radio" name="clarity" value="1" required>1</label>
+                        <label class="radio-inline"><input type="radio" name="clarity" value="2" required>2</label>
+                        <label class="radio-inline"><input type="radio" name="clarity" value="3" required>3</label>
+                        <label class="radio-inline"><input type="radio" name="clarity" value="4" required>4</label>
+                        <label class="radio-inline"><input type="radio" name="clarity" value="5" required>5</label>
+
+                    </div>
+                </div>
+
+                <!-- Previous Completion Question -->
+                <div class="question">
+                    <p class="statement">Have you completed this questionnaire before?</p>
+                    <div class="scale yes-no-scale">
+                        <!-- Radio buttons for yes/no answer -->
+                        <label class="radio-inline">
+                            <input type="radio" name="completedBefore" value="no" required checked>No
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="completedBefore" value="yes" required>Yes
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="submit-button-q">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+        <!-- Thank You Message hidden initially and shown after questionnaire is submitted -->
+        <div id="thank-you-message" class="thank-you-message hidden">
+            <p>Thank you for participating in this study. Your feedback is invaluable.</p>
+        </div>
+    </div>
+    <script src="/static/quest.js"></script>
+</body>
+</html>

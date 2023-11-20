@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIFU - AI Engagement Study</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="/static/style.css">
     <script src="/static/script.js" defer></script>
 </head>
@@ -11,140 +12,54 @@
 
 <div class="container">
     <header id="main-header">
-        <h1 id="objective-text">Welcome to SIFU</h1>
-        <p>Join us in exploring the engagement with an AI-based voice assistant. Your insights will help shape the future of AI interaction.</p>
+        <h1 id="objective-text">Welcome to SIFU - A Bachelor Thesis Project</h1>
+<p>
+    The aim of this project is to explore AI interaction and contribute to the future of AI communication.
+</p>
+<p>
+    If you choose to press on participate, you will be given an assigment and you will need to interact with an AI assistant. When the counter hits 0 you will be automatically redirected(after 8 seconds) to a questionnaire. You can participate as many times as you want, just remember to mark it on the questionnaire.
+</p>
+<br>
         <button id="participate-button">Participate!</button>
+        <p>
+            Note: We collect anonymous data (your AI interactions and questionnaire responses) solely for academic research, without personal identifiers. Your participation implies consent to this data collection.
+        </p>
     </header>
 
-    <main>
-        <div id="interaction-counter" class="hidden">
-            <p>Interactions left: <span id="interaction-count">15/15</span></p>
+    <main id="main-content" class="hidden">
+        <div id="interaction-counter" class="interaction-counter">
+            <p>Interactions left: <span id="interaction-count">10/10</span></p>
         </div>
 
-        <div id="avatar-container" class="hidden">
-            <!-- Avatar image will be loaded here -->
-        </div>
-
-        <div id="ai-response" class="hidden">
-            <!-- AI's response will be displayed here -->
-        </div>
-
-        <div id="user-interaction-area" class="hidden">
-            <input type="text" id="user-input" placeholder="Your answer">
-            <button id="submit-answer">Submit</button>
-        </div>
-
-        <!-- After interactions are completed, the questionnaire will be displayed -->
-        <div id="questionnaire" class="questionnaire hidden">
-            <p class="thanks">Now that you have interacted with the AI, we invite you to share your experience. Please take a moment to complete the following questionnaire.</p>
-
-            <form id="aiQuestionnaire">
-                <!-- User Experience and Usability -->
-            <p>1 = Strongly Disagree and 5 = Strongly Agree.</p>
-                <div class="question">
-                    <p class="statement">The AI assistant understood my queries effectively.</p>
-                    <div class="scale">
-                        <!-- Radio buttons for the Likert scale -->
-                        <label class="radio-inline"><input type="radio" name="understanding" value="1">1</label>
-                        <label class="radio-inline"><input type="radio" name="understanding" value="2">2</label>
-                        <label class="radio-inline"><input type="radio" name="understanding" value="3">3</label>
-                        <label class="radio-inline"><input type="radio" name="understanding" value="4">4</label>
-                        <label class="radio-inline"><input type="radio" name="understanding" value="5">5</label>
-                    </div>
+        <div id="interaction-area" class="interaction-area">
+            <div id="avatar-and-response-container">
+                <div id="avatar-container">
+                    <!-- Avatar image will be loaded here -->
                 </div>
-
-                <!-- Perceived Intelligence -->
-                <div class="question">
-                    <p class="statement">The AI assistant provided information that was relevant.</p>
-                    <div class="scale">
-                         <!-- Radio buttons for the Likert scale -->
-                         <label class="radio-inline"><input type="radio" name="understanding" value="1">1</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="2">2</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="3">3</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="4">4</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="5">5</label>
-                    </div>
+                <div id="ai-response-container" class="response-container">
+                    <textarea id="ai-response" readonly></textarea>
                 </div>
+            </div>
 
-                <!-- Emotional Connection -->
-                <div class="question">
-                    <p class="statement">The AI seemed to understand and care about my feelings during the interaction.</p>
-                    <div class="scale">
-                         <!-- Radio buttons for the Likert scale -->
-                         <label class="radio-inline"><input type="radio" name="understanding" value="1">1</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="2">2</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="3">3</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="4">4</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="5">5</label>
-                    </div>
-                </div>
-
-                <!-- Future Interaction and Trust -->
-                <div class="question">
-                    <p class="statement">I trust the responses of the AI assistant to be reliable.</p>
-                    <div class="scale">
-                         <!-- Radio buttons for the Likert scale -->
-                         <label class="radio-inline"><input type="radio" name="understanding" value="1">1</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="2">2</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="3">3</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="4">4</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="5">5</label>
-                    </div>
-                </div>
-
-                <!-- Overall Satisfaction -->
-                <div class="question">
-                    <p class="statement">I was satisfied with the AI assistant as a conversational partner.</p>
-                    <div class="scale">
-                         <!-- Radio buttons for the Likert scale -->
-                         <label class="radio-inline"><input type="radio" name="understanding" value="1">1</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="2">2</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="3">3</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="4">4</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="5">5</label>
-                    </div>
-                </div>
-
-                <!-- Task-Focused Interaction -->
-                <div class="question">
-                    <p class="statement">The AI supported me well in progressing towards the task's completion.</p>
-                    <div class="scale">
-                         <!-- Radio buttons for the Likert scale -->
-                         <label class="radio-inline"><input type="radio" name="understanding" value="1">1</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="2">2</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="3">3</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="4">4</label>
-                         <label class="radio-inline"><input type="radio" name="understanding" value="5">5</label>
-                    </div>
-                </div>
-
-                <!-- User Experience Clarity -->
-                <div class="question">
-                    <p class="statement">The AI's responses to my queries were straightforward and easy to understand.</p>
-                    <div class="scale">
-                        <!-- Radio buttons for the Likert scale -->
-                        <label class="radio-inline"><input type="radio" name="understanding" value="1">1</label>
-                        <label class="radio-inline"><input type="radio" name="understanding" value="2">2</label>
-                        <label class="radio-inline"><input type="radio" name="understanding" value="3">3</label>
-                        <label class="radio-inline"><input type="radio" name="understanding" value="4">4</label>
-                        <label class="radio-inline"><input type="radio" name="understanding" value="5">5</label>
-
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="submit-button-q">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-            <div id="thank-you-message" class="thank-you-message">
-                <p>Thank you for participating in this study. Your feedback is highly valued and will contribute significantly to our understanding of AI interactions.</p>
-                <p>- Niklas</p>
+            <div id="assignment-container" class="assignment-container">
+                <!-- Assignment text will be displayed here -->
             </div>
         </div>
 
+        <div id="user-interaction-area" class="user-interaction-area">
+            <input type="text" id="user-input" placeholder="Your answer" maxlength="150">
+            <button id="submit-answer" class="send-icon"></button>
+            <span id="char-count">150</span> <!-- This element displays the character count -->
+          </div>
+
+
     </main>
 </div>
-
+<footer style="text-align: center; position: fixed; bottom: 0; width: 100%; padding:20px; color: whitesmoke;">
+    Yours Sincerely, Niklas |
+    <a href="https://www.arcada.fi/en" target="_blank" style="color: #007bff; text-decoration: none; hover:text-decoration: underline;">Arcada University of Applied Sciences</a> |
+    PS. Have any questions, feedback, or just want to connect? Contact me on
+    <a href="https://www.linkedin.com/in/niklaswestin/" target="_blank" style="color: #007bff; text-decoration: none; hover:text-decoration: underline;">LinkedIn</a>.
+</footer>
 </body>
 </html>
